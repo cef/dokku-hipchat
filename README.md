@@ -1,4 +1,3 @@
-
 #dokku-hipchat
 
 dokku-hipchat is a plugin for [dokku](https://github.com/progrium/dokku) that notifies [hipchat](http://www.hipchat.com) of build/deployment stages.
@@ -6,7 +5,7 @@ dokku-hipchat is a plugin for [dokku](https://github.com/progrium/dokku) that no
 ## Installation
 
 ```sh
-git clone https://github.com/cef/dokku-hipchat.git /var/lib/dokku/plugins/dokku-hipchat
+git clone https://github.com/cef/dokku-hipchat.git /var/lib/dokku/plugins/hipchat
 ```
 
 ## Configuration
