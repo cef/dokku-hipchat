@@ -1,7 +1,7 @@
 
 #dokku-hipchat
 
-dokku-hipchat is a plugin for [dokku][dokku] that notifies [http://www.hipchat.com][hipchat] of build/deployment stages.
+dokku-hipchat is a plugin for [dokku](https://github.com/progrium/dokku) that notifies [hipchat](http://www.hipchat.com) of build/deployment stages.
 
 ## Installation
 
@@ -21,7 +21,7 @@ export HIPCHAT_FROM='Dokku'
 
 ```
 
-see [][https://github.com/hipchat/hipchat-cli#environment-variables] for more details.
+see <https://github.com/hipchat/hipchat-cli#environment-variables> for more details.
 
 All future deployments will notify hipchat pre/post build/deploy.
 
@@ -29,8 +29,6 @@ All future deployments will notify hipchat pre/post build/deploy.
 ## License
 
 The MIT License (MIT)
-
-Copyright (c) 2013 Paul d'Hubert
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
