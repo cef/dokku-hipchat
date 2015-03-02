@@ -2,4 +2,4 @@
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 APP="$1"; IMAGE="$2";HOSTNAME=$(hostname -f);
 echo "-----> Notifying Hipchat of Release ..."
-echo "Build Complete for $APP on $HOSTNAME (<a href='http://$APP.$HOSTNAME'>$APP.$HOSTNAME</a>)" | HIPCHAT_COLOR=green $PLUGIN_PATH/hipchat/hipchat >/dev/null
+echo "Build Complete for $APP on $HOSTNAME" | HIPCHAT_COLOR=green $PLUGIN_PATH/hipchat/hipchat >/dev/null
