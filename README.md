@@ -1,3 +1,7 @@
+# Deprecation
+
+This repo is deprecated and no longer maintained. There is an alternative here: https://github.com/gcohen55/dokku-hipchat-plugin.
+
 #dokku-hipchat
 
 dokku-hipchat is a plugin for [dokku](https://github.com/progrium/dokku) that notifies [hipchat](http://www.hipchat.com) of build/deployment stages.
