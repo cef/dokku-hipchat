@@ -13,7 +13,7 @@ git clone https://github.com/cef/dokku-hipchat.git /var/lib/dokku/plugins/hipcha
 ```
 
 ## Configuration
-edit `/home/dokku/dockerrc` or `/etc/hipchat`
+edit `/home/dokku/dockerrc` or `/etc/hipchat` or `/home/dokku/$APP/ENV`
 
 E.G:
 ```
