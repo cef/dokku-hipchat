@@ -19,7 +19,7 @@ set -e
 
 usage() {
   cat << EOF
-Usage: $0 -t <token> -r <room id> -f <from name>
+Usage: $0 -t <token> -r <room id>
 
 This script will read from stdin and send the contents to the given room as
 a system message.
@@ -28,7 +28,6 @@ OPTIONS:
    -h             Show this message
    -t <token>     API token
    -r <room id>   Room ID
-   -f <from name> From name
    -c <color>     Message color (yellow, red, green, purple or random - default: yellow)
    -m <format>    Message format (html or text - default: html)
    -i <input>     Optional: Input to send to room (default: stdin)
@@ -43,7 +42,6 @@ test -f /etc/hipchat && . /etc/hipchat
 
 TOKEN=${HIPCHAT_TOKEN:-}
 ROOM_ID=${HIPCHAT_ROOM_ID:-}
-FROM=${HIPCHAT_FROM:-}
 COLOR=${HIPCHAT_COLOR:-}
 FORMAT=${HIPCHAT_FORMAT:-html}
 MESSAGE=${HIPCHAT_MESSAGE:-html}
@@ -55,7 +53,6 @@ while getopts “ht:r:f:c:m:o:i:l:n” OPTION; do
     h) usage; exit 1;;
     t) TOKEN=$OPTARG;;
     r) ROOM_ID=$OPTARG;;
-    f) FROM=$OPTARG;;
     c) COLOR=$OPTARG;;
     m) FORMAT=$OPTARG;;
     n) NOTIFY=1;;
@@ -67,7 +64,7 @@ while getopts “ht:r:f:c:m:o:i:l:n” OPTION; do
 done
 
 # check for required args
-if [[ -z $TOKEN ]] || [[ -z $ROOM_ID ]] || [[ -z $FROM ]]; then
+if [[ -z $TOKEN ]] || [[ -z $ROOM_ID ]]; then
   usage
   exit 1
 fi
@@ -107,5 +104,5 @@ INPUT=$(echo -n "${INPUT}" | perl -p -e 's/([^A-Za-z0-9])/sprintf("%%%02X", ord(
 
 # do the curl
 curl -sS \
-  -d "auth_token=$TOKEN&room_id=$ROOM_ID&from=$FROM&color=$COLOR&message_format=$FORMAT&message=$INPUT&notify=$NOTIFY" \
-  https://$HOST/v1/rooms/message
+  -d "auth_token=$TOKEN&color=$COLOR&message_format=$FORMAT&message=$INPUT&notify=$NOTIFY" \
+  https://$HOST/v2/room/$ROOM_ID/notification

@@ -9,7 +9,7 @@ dokku-hipchat is a plugin for [dokku](https://github.com/progrium/dokku) that no
 ## Installation
 
 ```sh
-git clone https://github.com/cef/dokku-hipchat.git /var/lib/dokku/plugins/hipchat
+git clone https://github.com/priorist/dokku-hipchat.git /var/lib/dokku/plugins/hipchat
 ```
 
 ## Configuration
@@ -20,7 +20,6 @@ E.G:
 export HIPCHAT_TOKEN=<token>
 export HIPCHAT_ROOM_ID=<room_id>
 export HIPCHAT_NOTIFY=1
-export HIPCHAT_FROM='Dokku'
 
 ```
 
