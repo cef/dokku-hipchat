@@ -20,8 +20,8 @@ E.G:
 export HIPCHAT_TOKEN=<token>
 export HIPCHAT_ROOM_ID=<room_id>
 export HIPCHAT_NOTIFY=1
-export HIPCHAT_FROM='Dokku'
-
+export HIPCHAT_FROM='Dokku' # optional in v2
+export HIPCHAT_API=v1       # version should be v1 or v2
 ```
 
 see <https://github.com/hipchat/hipchat-cli#environment-variables> for more details.
